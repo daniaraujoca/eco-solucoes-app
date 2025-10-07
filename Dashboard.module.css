@@ -1,0 +1,364 @@
+/* src/styles/Dashboard.module.css */
+.dashboardContainer {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    min-height: 100vh;
+    color: #333;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #2c3e50;
+}
+
+.logoutButton {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.logoutButton:hover {
+    background-color: #c0392b;
+}
+
+.content {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tabMenu {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.tabButton {
+    background-color: transparent;
+    border: none;
+    padding: 15px 20px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.tabButton:last-child {
+    margin-bottom: 0;
+}
+
+.tabButton:hover {
+    background-color: #f5f5f5;
+}
+
+.tabButton.active {
+    background-color: #3498db;
+    color: #fff;
+    font-weight: bold;
+}
+
+.tabContent {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.formContainer input, .formContainer select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.primaryButton, .secondaryButton {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.primaryButton {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+.primaryButton:hover {
+    background-color: #27ae60;
+}
+
+.secondaryButton {
+    background-color: #95a5a6;
+    color: #fff;
+}
+
+.secondaryButton:hover {
+    background-color: #7f8c8d;
+}
+
+.horarioContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+  
+.horarioContainer label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modalContent {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+}
+
+.modalFields {
+  overflow-y: auto;
+  padding-right: 15px;
+  margin-bottom: 20px;
+}
+
+.modalContent h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  flex-shrink: 0;
+}
+
+.modalContent input,
+.modalContent select,
+.modalContent textarea {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.modalContent input:disabled {
+  background-color: #e9ecef;
+  color: #555;
+  cursor: not-allowed;
+  -webkit-text-fill-color: #555;
+  opacity: 1;
+}
+
+.editButton, .deleteButton {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.editButton {
+    background-color: #3498db;
+}
+
+.editButton:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.deleteButton {
+    background-color: #e74c3c;
+}
+
+.deleteButton:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+.filterContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.filterContainer input,
+.filterContainer select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.subSection {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.subSection:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* --- NOVOS ESTILOS PARA TABELA DE DADOS --- */
+.listSubTabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.subTabButton {
+    padding: 10px 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #777;
+    border-bottom: 3px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.subTabButton:hover {
+    color: #333;
+}
+
+.subTabButton.active {
+    color: #3498db;
+    border-bottom-color: #3498db;
+}
+
+.tableContainer {
+    overflow-x: auto;
+}
+
+.dataTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.dataTable thead {
+    background-color: #f9f9f9;
+}
+
+.dataTable th, .dataTable td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.dataTable th {
+    font-weight: bold;
+    color: #555;
+}
+
+.dataTable tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.actionsCell {
+    display: flex;
+    gap: 10px;
+}
+
+.paginationContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.paginationButton {
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.paginationButton:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.paginationButton:not(:disabled):hover {
+    background-color: #f0f0f0;
+}
